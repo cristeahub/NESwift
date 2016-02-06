@@ -21,6 +21,22 @@ struct CPU {
   var memory = [UInt16].init(count: 64_000, repeatedValue: 0)
 }
 
-let cpu = CPU()
+// instructions
+extension CPU {
+  mutating func and(a: UInt16, b: UInt16) -> UInt16 {
+    let res = a & b
+    if res == 0 {
+      p |= Constants.ZERO_FLAG
+    } else {
+      p &= ~Constants.ZERO_FLAG
+    }
 
-print(cpu.p)
+    if a > 0 && b > 0 && res < 0 {
+      p |= Constants.NEGATIVE_FLAG
+    } else {
+      p &= ~Constants.NEGATIVE_FLAG
+    }
+
+    return res
+  }
+}
