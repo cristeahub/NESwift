@@ -8,7 +8,7 @@ XCAssert(cpu.sp, 0)
 XCAssert(cpu.a,  0)
 XCAssert(cpu.x,  0)
 XCAssert(cpu.y,  0)
-XCAssert(cpu.p,  0)
+XCAssert(cpu.p,  0b00100000)
 
 // Make sure the memory is big enough
 XCAssert(cpu.memory.count, 64_000)
