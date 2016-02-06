@@ -1,0 +1,14 @@
+.DS_Store
+
+/.build
+/Packages
+
+# Compiled files
+*.o
+*.so
+*.rlib
+*.dll
+
+# Vim
+*.swp
+*.swo
